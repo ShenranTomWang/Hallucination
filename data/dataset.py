@@ -1,9 +1,19 @@
 from abc import ABC, abstractmethod
+import json
 import pandas as pd
+import os
 
 class Dataset(ABC):
+    DATA_PATH = None
+
     def __init__(self) -> None:
         super().__init__()
+        if self.DATA_PATH is None:
+            raise NotImplementedError("DATA_PATH is not defined")
+
+        if not os.path.exists(self.DATA_PATH):
+            raise FileNotFoundError(f"Data file not found at {self.DATA_PATH}")
+
     
     @abstractmethod
     def get_question(self, i: int) -> str:
@@ -57,9 +67,38 @@ class TruthfulQA(Dataset):
         self.data = pd.read_csv(self.DATA_PATH)
         
     def get_question(self, i: int) -> str:
+        if i < 0 or i >= len(self.data):
+            raise IndexError("Index out of bounds")
         return self.data["Question"][i]
     
     def write(self, column: str, i: int, value: any):
+        self.data.loc[i, column] = value
+        
+    def to_csv(self, filename: str):
+        self.data.to_csv(filename)
+        
+    def len(self) -> int:
+        return len(self.data)
+    
+class QAData(Dataset):
+    
+    DATA_PATH = "./data/qa_data.json"
+    
+    def __init__(self) -> None:
+        super().__init__()
+        with open(self.DATA_PATH, 'r') as file:
+            self.data = pd.DataFrame([json.loads(line) for line in file])
+        
+    def get_question(self, i: int) -> str:
+        if i < 0 or i >= len(self.data):
+            raise IndexError("Index out of bounds")
+        return self.data["question"].iloc[i]
+    
+    def write(self, column: str, i: int, value: any):
+        if i < 0 or i >= len(self.data):
+            raise IndexError("Index out of bounds")
+        if column not in self.data.columns:
+            self.data[column] = None 
         self.data.loc[i, column] = value
         
     def to_csv(self, filename: str):
