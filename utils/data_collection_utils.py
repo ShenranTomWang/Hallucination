@@ -2,7 +2,7 @@ import importlib
 
 def generate(model, tokenizer, query, device):
     input_ids = tokenizer(query, return_tensors="pt").input_ids.to(device)
-    output_ids = model.generate(input_ids, max_length=10000)[0, len(input_ids):]
+    output_ids = model.generate(input_ids, max_length=100000)[0, len(input_ids):]
     answer = tokenizer.decode(output_ids)
         
     return answer
