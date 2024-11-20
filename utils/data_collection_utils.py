@@ -1,9 +1,11 @@
 import importlib
+import torch
 
 def generate(model, tokenizer, query, device):
-    input_ids = tokenizer(query, return_tensors="pt").input_ids.to(device)
-    output_ids = model.generate(input_ids, max_length=100000)[0, len(input_ids):]
-    answer = tokenizer.decode(output_ids)
+    with torch.no_grad():
+        input_ids = tokenizer(query, return_tensors="pt").input_ids.to(device)
+        output_ids = model.generate(input_ids, max_length=100000)[0, input_ids.shape[1]:]
+        answer = tokenizer.decode(output_ids)
         
     return answer
 
