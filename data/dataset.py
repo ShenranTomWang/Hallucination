@@ -92,7 +92,10 @@ class QAData(Dataset):
     def get_question(self, i: int) -> str:
         if i < 0 or i >= len(self.data):
             raise IndexError("Index out of bounds")
-        return self.data["question"].iloc[i]
+        
+        knowledge = self.data["knowledge"].iloc[i]
+        question = self.data["question"].iloc[i]
+        return f"Knowledge: {knowledge}\nQuestion: {question}"
     
     def write(self, column: str, i: int, value: any):
         if i < 0 or i >= len(self.data):
