@@ -3,7 +3,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from utils.data_collection_utils import generate, get_class
 
-MODEL = "/project/6080355/shenranw/CoT/models/google/gemma-2-2b-it"
+MODEL = "/home/shenranw/CoT/models/google/gemma-2-2b-it"
 START_IDX = int(os.getenv("START_IDX", 0))
 END_IDX = int(os.getenv("END_IDX", -1))
 DATASET = os.getenv("DATASET")
