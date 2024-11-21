@@ -72,7 +72,9 @@ class TruthfulQA(Dataset):
         return self.data["Question"][i]
     
     def write(self, column: str, i: int, value: any):
-        self.data.loc[i, column] = value
+        if column not in self.data.columns:
+            self.data[column] = None
+        self.data.at[i, column] = value
         
     def to_csv(self, filename: str):
         self.data.to_csv(filename)
@@ -101,7 +103,7 @@ class QAData(Dataset):
         if i < 0 or i >= len(self.data):
             raise IndexError("Index out of bounds")
         if column not in self.data.columns:
-            self.data[column] = None 
+            self.data[column] = None
         self.data.loc[i, column] = value
         
     def to_csv(self, filename: str):
