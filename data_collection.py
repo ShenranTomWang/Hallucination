@@ -3,7 +3,7 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from utils.data_collection_utils import generate, get_class
 
-MODEL = "/home/shenranw/CoT/models/google/gemma-2-2b-it"
+MODEL = "/project/6080355/shenranw/CoT/models/google/gemma-2-2b-it"
 START_IDX = int(os.getenv("START_IDX", 0))
 END_IDX = int(os.getenv("END_IDX", -1))
 DATASET = os.getenv("DATASET")
@@ -19,11 +19,14 @@ count = START_IDX
 end = END_IDX if END_IDX != -1 else data.len()
 chat_completions = []
 model = AutoModelForCausalLM.from_pretrained(MODEL, device_map=device, torch_dtype=torch.float16)
-print("model loaded")
+with open("./output.txt", "a") as f:
+    f.write("model loaded\n")
 tokenizer = AutoTokenizer.from_pretrained(MODEL, device_map=device, torch_dtype=torch.float16)
-print("tokenizer loaded")
+with open("./output.txt", "a") as f:
+    f.write("tokenizer loaded\n")
 while count < end:
-    print(count)
+    with open("./output.txt", "a") as f:
+        f.write(f"{count}\n")
     question = data.get_question(count)
     answer1 = generate(model, tokenizer, question, device)
     # print(answer1 + "\n" + "*" * 100)
@@ -37,22 +40,11 @@ while count < end:
     proposer_prompt2 = PromptClass.PROPOSER_PROMPT_2_TEMPLATE.substitute(
         question=question, answer1=answer1, feedback1=feedback1
     )
+    # print(proposer_prompt2 + "\n" + "*" * 150)
     
     answer2 = generate(model, tokenizer, proposer_prompt2, device)
     # print(answer2 + "\n" + "*" * 100)
-    refiner_prompt2 = PromptClass.REFINER_PROMPT_2_TEMPLATE.substitute(
-        question=question, answer1=answer1, feedback1=feedback1, answer2=answer2
-    )
-    
-    feedback2 = generate(model, tokenizer, refiner_prompt2, device)
-    # print(feedback2 + "\n" + "*" * 100)
-    proposer_prompt3 = PromptClass.PROPOSER_PROMPT_3_TEMPLATE.substitute(
-        question=question, answer1=answer1, feedback1=feedback1, answer2=answer2, feedback2=feedback2
-    )
-    
-    answer3 = generate(model, tokenizer, proposer_prompt3, device)
-    # print(answer2 + "\n" + "*" * 100)
-    data.write("two_agents_probing" if PROBE else "two_agents", count, answer3)
+    data.write("two_agents_probing" if PROBE else "two_agents", count, answer2)
     
     summarizer_prompt = PromptClass.SUMMARIZER_PROMPT_TEMPLATE.substitute(
         question=question, answer1=answer1, feedback1=feedback1, answer2=answer2
