@@ -61,4 +61,4 @@ while count < end:
 if not os.path.exists("./experimental_data"):
     os.mkdir("./experimental_data")
 
-data.to_csv(f"./experimental_data/{DATASET}.csv")
+data.to_csv(f"./experimental_data/{DATASET}" + "_probe" if PROBE else "" + ".csv")
