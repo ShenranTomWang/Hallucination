@@ -8,7 +8,7 @@ START_IDX = int(os.getenv("START_IDX", 0))
 END_IDX = int(os.getenv("END_IDX", -1))
 DATASET = os.getenv("DATASET")
 PROBE = int(os.getenv("PROBE", 0)) == 1
-OUTPUT_FILE = f"./output_{DATASET}{"_probe" if PROBE else ""}.txt"
+OUTPUT_FILE = f"./output_{DATASET}" + ("_probe" if PROBE else "") + ".txt"
 PromptClass = get_class("templates", "Probing" if PROBE else "NonProbing")
 DatasetClass = get_class(f"data.dataset", DATASET)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
