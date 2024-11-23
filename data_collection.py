@@ -25,37 +25,40 @@ tokenizer = AutoTokenizer.from_pretrained(MODEL, device_map=device, torch_dtype=
 with open("./output.txt", "a") as f:
     f.write("tokenizer loaded\n")
 while count < end:
-    with open("./output.txt", "a") as f:
-        f.write(f"{count}\n")
-    question = data.get_question(count)
-    answer1 = generate(model, tokenizer, question, device)
-    # print(answer1 + "\n" + "*" * 100)
-    data.write("single_agent", count, answer1)
-    refiner_prompt1 = PromptClass.REFINER_PROMPT_1_TEMPLATE.substitute(
-        question=question, answer1=answer1
-    )
-    
-    feedback1 = generate(model, tokenizer, refiner_prompt1, device)
-    # print(feedback1 + "\n" + "*" * 100)
-    proposer_prompt2 = PromptClass.PROPOSER_PROMPT_2_TEMPLATE.substitute(
-        question=question, answer1=answer1, feedback1=feedback1
-    )
-    # print(proposer_prompt2 + "\n" + "*" * 150)
-    
-    answer2 = generate(model, tokenizer, proposer_prompt2, device)
-    # print(answer2 + "\n" + "*" * 100)
-    data.write("two_agents_probing" if PROBE else "two_agents", count, answer2)
-    
-    summarizer_prompt = PromptClass.SUMMARIZER_PROMPT_TEMPLATE.substitute(
-        question=question, answer1=answer1, feedback1=feedback1, answer2=answer2
-    )
-    final_answer = generate(model, tokenizer, summarizer_prompt, device)
-    # allocated_memory = torch.cuda.memory_allocated(0) / (1024 ** 3)
-    # print(f"Allocated {allocated_memory} GB cuda memory")
-    # print(final_answer + "\n" + "*" * 100)
-    data.write("three_agents_probing" if PROBE else "three_agents", count, final_answer)
-    
-    count += 1
+    try:
+        with open("./output.txt", "a") as f:
+            f.write(f"{count}\n")
+        question = data.get_question(count)
+        answer1 = generate(model, tokenizer, question, device)
+        # print(answer1 + "\n" + "*" * 100)
+        data.write("single_agent", count, answer1)
+        refiner_prompt1 = PromptClass.REFINER_PROMPT_1_TEMPLATE.substitute(
+            question=question, answer1=answer1
+        )
+        
+        feedback1 = generate(model, tokenizer, refiner_prompt1, device)
+        # print(feedback1 + "\n" + "*" * 100)
+        proposer_prompt2 = PromptClass.PROPOSER_PROMPT_2_TEMPLATE.substitute(
+            question=question, answer1=answer1, feedback1=feedback1
+        )
+        # print(proposer_prompt2 + "\n" + "*" * 150)
+        
+        answer2 = generate(model, tokenizer, proposer_prompt2, device)
+        # print(answer2 + "\n" + "*" * 100)
+        data.write("two_agents_probing" if PROBE else "two_agents", count, answer2)
+        
+        summarizer_prompt = PromptClass.SUMMARIZER_PROMPT_TEMPLATE.substitute(
+            question=question, answer1=answer1, feedback1=feedback1, answer2=answer2
+        )
+        final_answer = generate(model, tokenizer, summarizer_prompt, device)
+        # allocated_memory = torch.cuda.memory_allocated(0) / (1024 ** 3)
+        # print(f"Allocated {allocated_memory} GB cuda memory")
+        # print(final_answer + "\n" + "*" * 100)
+        data.write("three_agents_probing" if PROBE else "three_agents", count, final_answer)
+    except Exception as e:
+        print(e)
+    finally:
+        count += 1
     # print("\n\n\n")
     
 if not os.path.exists("./experimental_data"):
