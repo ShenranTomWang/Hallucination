@@ -111,3 +111,33 @@ class QAData(Dataset):
         
     def len(self) -> int:
         return len(self.data)
+
+class UMWPDataset(Dataset):
+    DATA_PATH = "./data/UMWP.jsonl"
+
+    def __init__(self) -> None:
+        super().__init__()
+        with open(self.DATA_PATH, 'r') as file:
+            self.data = pd.DataFrame([json.loads(line) for line in file])
+
+    def get_question(self, i: int) -> str:
+        if 0 <= i < len(self.data):
+            return self.data.loc[i, 'question']
+        else:
+            raise IndexError("Index out of range")
+
+    def write(self, column: str, i: int, value: any):
+        if column not in self.data.columns:
+            self.data[column] = None
+        if 0 <= i < len(self.data):
+            self.data.at[i, column] = value
+        else:
+            raise IndexError("Index out of range")
+
+    def to_csv(self, filename: str):
+        self.data.to_csv(filename, index=False)
+
+    def len(self) -> int:
+        return len(self.data)
+
+
