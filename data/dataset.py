@@ -122,7 +122,7 @@ class UMWPDataset(Dataset):
         with open(self.DATA_PATH, 'r') as file:
             full_data = pd.DataFrame([json.loads(line) for line in file])
             if len(full_data) >= 400:
-                self.data = pd.concat([full_data.iloc[:200], full_data.iloc[-200:]]).reset_index(drop=True)
+                self.data = pd.concat([full_data.iloc[:50], full_data.iloc[-50:]]).reset_index(drop=True)
             else:
                 self.data = full_data
 
