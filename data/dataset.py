@@ -117,8 +117,14 @@ class UMWPDataset(Dataset):
 
     def __init__(self) -> None:
         super().__init__()
+        # with open(self.DATA_PATH, 'r') as file:
+        #     self.data = pd.DataFrame([json.loads(line) for line in file])
         with open(self.DATA_PATH, 'r') as file:
-            self.data = pd.DataFrame([json.loads(line) for line in file])
+            full_data = pd.DataFrame([json.loads(line) for line in file])
+            if len(full_data) >= 400:
+                self.data = pd.concat([full_data.iloc[:200], full_data.iloc[-200:]]).reset_index(drop=True)
+            else:
+                self.data = full_data
 
     def get_question(self, i: int) -> str:
         if 0 <= i < len(self.data):
@@ -139,5 +145,13 @@ class UMWPDataset(Dataset):
 
     def len(self) -> int:
         return len(self.data)
+
+
+# def test_umwp_dataset():
+#     dataset = UMWPDataset()
+#     print(dataset.data)
+#
+# test_umwp_dataset()
+
 
 
