@@ -39,7 +39,7 @@
         "two_agents": "correct",
         "three_agents": "correct",
         "two_agents_probing": "correct",
-        "three_agents_probing": "This conversation has not started. Please provide a response to evaluate."
+        "three_agents_probing": "missing"
     },
     {
         "single_agent": "correct",
