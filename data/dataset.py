@@ -88,7 +88,7 @@ class QAData(Dataset):
     
     def __init__(self) -> None:
         super().__init__()
-        with open(self.DATA_PATH, 'r') as file:
+        with open(self.DATA_PATH, 'r', encoding="utf-8") as file:
             self.data = pd.DataFrame([json.loads(line) for line in file])
         
     def get_question(self, i: int) -> str:
