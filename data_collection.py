@@ -58,9 +58,13 @@ while count < end:
         # print(final_answer + "\n" + "*" * 100)
         data.write("three_agents", count, final_answer)
     except Exception as e:
-        print(e)
+        with open(OUTPUT_FILE, "a") as f:
+            f.write(e + "\n")
     finally:
         count += 1
+        if not os.path.exists("./experimental_data"):
+            os.mkdir("./experimental_data")
+        data.to_csv(f"./experimental_data/{DATASET}" + ("_probe" if PROBE else "") + ".csv")
     # print("\n\n\n")
     
 if not os.path.exists("./experimental_data"):
