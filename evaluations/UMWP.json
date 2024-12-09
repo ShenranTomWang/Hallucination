@@ -1,0 +1,443 @@
+[
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "correct",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "correct",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "correct",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "correct",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "correct",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "correct"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "incorrect",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "correct",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "correct",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "Incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "correct",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    },
+    {
+        "single_agent": "incorrect",
+        "two_agents": "incorrect",
+        "three_agents": "incorrect",
+        "two_agents_probing": "incorrect",
+        "three_agents_probing": "incorrect"
+    }
+]
